@@ -18,7 +18,11 @@ const routes: Routes = [
   {
     path: 'tab',
     loadChildren: () => import('./tab/tab.module').then( m => m.TabPageModule)
+  },  {
+    path: 'agendar-hora',
+    loadChildren: () => import('./agendar-hora/agendar-hora.module').then( m => m.AgendarHoraPageModule)
   },
+
 ];
 
 @NgModule({
