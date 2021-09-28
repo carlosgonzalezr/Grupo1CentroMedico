@@ -27,10 +27,32 @@ Agendar hora
       <ion-list>
         <h1 class="ion-text-center">Menu Principal</h1>
         <!--<ion-icon name="calendar-outline"></ion-icon>-->
-        <ion-item [routerLink]="['/tab']">Inicio</ion-item>
-        <ion-item [routerLink]="['/agendar-hora']">Agendar Hora</ion-item>
-        <ion-item>Agenda</ion-item>
-        <ion-item [routerLink]="['/login']">Salir</ion-item>
+        <ion-item [routerLink]="['/tab']">
+          <ion-label floating>
+            <ion-icon name="home" item-start class="text-primary"></ion-icon>
+            Inicio
+          </ion-label>
+        </ion-item>
+        <ion-item [routerLink]="['/agendar-hora']">
+          <ion-label floating>
+            <ion-icon name="add-circle-outline" item-start class="text-primary"></ion-icon>
+            Agendar Hora
+          </ion-label>
+        </ion-item>
+        <ion-item [routerLink]="['/datos-personales']">
+          <ion-label floating>
+            <ion-icon name="person" item-start class="text-primary"></ion-icon>
+            Datos Personales
+          </ion-label>
+        </ion-item >
+
+        <!-- <ion-item (click)="validarSalida()"> --> 
+        <ion-item >
+          <ion-label floating>
+            <ion-icon name="exit" item-start class="text-primary"></ion-icon>
+            Salir
+          </ion-label>
+        </ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
