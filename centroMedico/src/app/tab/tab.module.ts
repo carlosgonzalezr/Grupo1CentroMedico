@@ -8,12 +8,16 @@ import { TabPageRoutingModule } from './tab-routing.module';
 
 import { TabPage } from './tab.page';
 
+import { CalendarModule } from 'ion2-calendar';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TabPageRoutingModule
+    TabPageRoutingModule,
+    CalendarModule
   ],
   declarations: [TabPage]
 })
