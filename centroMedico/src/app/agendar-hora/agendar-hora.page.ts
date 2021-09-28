@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agendar-hora.page.scss'],
 })
 export class AgendarHoraPage implements OnInit {
+  today;
 
-  constructor() { }
+  constructor() { 
+    this.today = new Date().toISOString();
+  }
 
   ngOnInit() {
   }
