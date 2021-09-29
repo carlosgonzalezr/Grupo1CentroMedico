@@ -56,19 +56,56 @@
     </ion-content>
   </ion-menu>
   <ion-router-outlet Id="content"></ion-router-outlet>
-
-  <ion-card class="margen">
-    <ion-card-header>
-      <ion-img src="assets\img\centro-medico.jpg"></ion-img>
-      <ion-card-title>Centro Medico Galenos</ion-card-title>
-
-      <ion-card-subtitle>+56 2 1234 5678</ion-card-subtitle>
-    </ion-card-header>
-
-    <ion-card-content>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aspernatur minus cupiditate accusantium quaerat velit voluptatum rem aperiam sequi deserunt. Animi optio adipisci corporis laudantium praesentium sunt est tempore impedit!
-    </ion-card-content>
-  </ion-card>
+  <ion-content>
+    <ion-infinite-scroll>
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Cargando">
+        <ion-card class="margen">
+          <ion-card-header>
+            <ion-img src="assets\img\doctor.jpg"></ion-img>
+            <ion-card-title>Los mejores medicos para nuestros pacientes</ion-card-title>
+      
+            <ion-card-subtitle>Clinica Galenos</ion-card-subtitle>
+          </ion-card-header>
+      
+          <ion-card-content>
+            Entregar una atención humanizada y un cuidado médico eficaz y eficiente.
+            Ser el líder latinoamericano en la excelencia e innovación en la entrega de cuidados de la salud y en la seguridad de los pacientes, mejorando continua y sistemáticamente la calidad de nuestros servicios así como la experiencia de nuestro público.
+            Enfocarnos en medicina de alta complejidad y ser pioneros en la implementación de tecnologías, terapias y modelos de tratamiento.
+            Incorporar y mantener los médicos más calificados del país, tanto desde el punto de vista técnico, como su calidad humana y vocación académica.
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="margen">
+          <ion-card-header>
+            <ion-img src="assets\img\covid2.jpg"></ion-img>
+            <ion-card-title>cuidate del covid-19</ion-card-title>
+      
+            <ion-card-subtitle>datos para la precaucion del covid-19</ion-card-subtitle>
+          </ion-card-header>
+      
+          <ion-card-content>
+            Todos los virus mutan con el tiempo, pero algunos de sus cambios pueden impactar en sus propiedades, como el grado de transmisibilidad, la gravedad de la enfermedad o el rendimiento de las vacunas.
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="margen">
+          <ion-card-header>
+            <ion-img src="assets\img\dientes.jpg"></ion-img>
+            <ion-card-title>Oferta de braquets!!!</ion-card-title>
+      
+            <ion-card-subtitle>si eres isapre obten descuentos</ion-card-subtitle>
+          </ion-card-header>
+      
+          <ion-card-content>
+            Disfruta de nuestros planes de ortodoncia con un 60% de descuento en tu tratamiento. ¡Aprovecha! Promoción por tiempo limitado. Pagos Fonasa e ISAPRES. Agenda tu hora.
+          </ion-card-content>
+        </ion-card>
+        
+        
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-content>
+  
 
 
 </ion-app>
