@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'agendar-hora',
     loadChildren: () => import('./agendar-hora/agendar-hora.module').then( m => m.AgendarHoraPageModule)
   },
+  {
+    path: 'horas',
+    loadChildren: () => import('./horas/horas.module').then( m => m.HorasPageModule)
+  },
 
 ];
 
