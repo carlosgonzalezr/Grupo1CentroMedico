@@ -3,7 +3,7 @@
   <ion-header>
     <ion-toolbar color="primary">
       <ion-title class="titulo" >Protocolo COVID-19</ion-title>
-      <ion-icon class="flecha" name="arrow-back-outline" [routerLink]="['']"></ion-icon>
+      <ion-icon class="flecha" name="arrow-back-outline" [routerLink]="['/tab']"></ion-icon>
     </ion-toolbar>
   </ion-header>
 
@@ -13,8 +13,8 @@
 
     <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
       <ion-infinite-scroll-content
-        loadingSpinner="bubbles"
-        loadingText="calmao...">
+        loadingSpinner=""
+        loadingText="">
         <ion-card class="margen fondocard">
         <ion-card-header>
           <ion-card-title>
