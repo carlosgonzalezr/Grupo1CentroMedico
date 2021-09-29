@@ -46,6 +46,33 @@ export class PagoPage implements OnInit {
     const { role } = await alert.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
   }
+  
+  async validarSalida() {
+    const alert = await this.alerta.create({
+      cssClass: 'my-custom-class',
+      header: 'Confirmacion!',
+      message: 'Esta, seguro de salir?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Salir',
+          handler: () => {
+            console.log('Confirm Okay');
+            this.navCtrl.navigateForward("login");
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
 
 
 }

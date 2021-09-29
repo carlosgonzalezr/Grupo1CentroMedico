@@ -25,7 +25,7 @@
     </ion-header>
     <ion-content color="light">
       <ion-list>
-        <h1 class="ion-text-center">Menu Principal</h1>
+        <h1 class="ion-text-center">Menú Principal</h1>
         <!--<ion-icon name="calendar-outline"></ion-icon>-->
         <ion-item [routerLink]="['/tab']">
           <ion-label floating>
@@ -45,6 +45,12 @@
             Datos Personales
           </ion-label>
         </ion-item>
+        <ion-item [routerLink]="['/pago']">
+          <ion-label floating>
+            <ion-icon name="card" item-start class="text-primary"></ion-icon>
+            Pago
+          </ion-label>
+        </ion-item >
         <ion-item (click)="validarSalida()">
           <ion-label floating>
             <ion-icon name="exit" item-start class="text-primary"></ion-icon>
@@ -58,7 +64,7 @@
   <div class="margen">
     <ion-card>
       <ion-card-content>
-        <p class="margen-text">seleccione la fecha de atencion</p>
+        <p class="margen-text">Seleccione la fecha de atención</p>
         <ion-calendar [(ngModel)]="date" (change)="onChange($event)" [type]="type"
           [format]="'YYYY-MM-DD'" required>
         </ion-calendar>
