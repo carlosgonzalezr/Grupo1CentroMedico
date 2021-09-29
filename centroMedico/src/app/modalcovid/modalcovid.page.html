@@ -1,0 +1,41 @@
+<ion-content>
+
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title class="titulo" >Protocolo COVID-19</ion-title>
+      <ion-icon class="flecha" name="arrow-back-outline" [routerLink]="['/tab']"></ion-icon>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+
+    <ion-list></ion-list>
+
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner=""
+        loadingText="">
+        <ion-card class="margen fondocard">
+        <ion-card-header>
+          <ion-card-title>
+            nuestro Protocolo para la nueva variante Delta
+          </ion-card-title>
+          <ion-img src="assets\img\proto.jpg"></ion-img>
+        </ion-card-header>
+      <ion-card-content>
+        El primer aspecto a cautelar es la integridad de los funcionarios/as, por lo que cada Servicio deberá 
+        proveer los elementos de protección para ellos/as, consistentes en:<br> 
+        Mascarillas que cubra la nariz y boca.
+        Alcohol gel.
+        Guantes quirúrgicos (opcional) Instalación de acrílico protector en módulos de atención o protector facial/ocular para el caso 
+        de personal que desarrolle atención directa a público (opcional)
+      </ion-card-content>
+      <ion-img src="assets\img\proto2.png"></ion-img>
+      <ion-img src="assets\img\proto3.jpg"></ion-img>
+      
+        </ion-card>
+ 
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-content>

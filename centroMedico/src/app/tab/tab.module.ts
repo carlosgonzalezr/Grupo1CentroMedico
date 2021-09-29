@@ -9,6 +9,8 @@ import { TabPageRoutingModule } from './tab-routing.module';
 import { TabPage } from './tab.page';
 
 import { CalendarModule } from 'ion2-calendar';
+//modal
+import{ModalcovidPage} from '../modalcovid/modalcovid.page';
 
 
 @NgModule({
@@ -19,6 +21,9 @@ import { CalendarModule } from 'ion2-calendar';
     TabPageRoutingModule,
     CalendarModule
   ],
-  declarations: [TabPage]
+  declarations: [
+    TabPage,
+    ModalcovidPage],
+  entryComponents:[ModalcovidPage]
 })
 export class TabPageModule {}
