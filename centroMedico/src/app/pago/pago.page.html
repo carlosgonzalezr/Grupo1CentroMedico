@@ -1,9 +1,30 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>pago</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="fondo-pago">
+  <ion-card class="margen">
+    <ion-card-content color="light">
 
-<ion-content>
+      <ion-item>
+        <ion-label position="floating">Número de Tarjeta</ion-label>
+        <ion-input [(ngModel)]="name" type="text" required></ion-input>
+      </ion-item>
 
+      <ion-item >
+        <ion-label position="floating">Nombre Completo</ion-label>
+        <ion-input [(ngModel)]="apellido" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">MM/YYYY</ion-label>
+        <ion-datetime [pickerOptions]="customPickerOptions" placeholder="Custom Options" displayFormat="MM/YYYY" min="01/2021" max="12/2030"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">CVC</ion-label>
+        <ion-input [(ngModel)]="password" type="password" required></ion-input>
+      </ion-item>
+
+      <ion-button class="ion-margin-top" type="submit" expand="block" color="primary" (click)="onSubmit()">
+        Pagar
+      </ion-button>
+
+  </ion-card>
 </ion-content>
