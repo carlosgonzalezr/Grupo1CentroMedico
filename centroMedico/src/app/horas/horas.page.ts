@@ -11,7 +11,7 @@ export class HorasPage implements OnInit {
   constructor(private navCtrl: NavController) { }
   click() {
 
-    this.navCtrl.navigateForward("#");
+    this.navCtrl.navigateForward("pago");
 
   }
 
