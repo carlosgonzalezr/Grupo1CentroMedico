@@ -4,14 +4,14 @@
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
     <ion-title class="titulo">
-Agendar hora
+      Agendar hora
     </ion-title>
-<ion-chip class="avatar">
-        <ion-avatar>
-          <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg">
-        </ion-avatar>
-        <ion-label>Juan</ion-label>
-      </ion-chip>
+    <ion-chip class="avatar">
+      <ion-avatar>
+        <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg">
+      </ion-avatar>
+      <ion-label>Juan</ion-label>
+    </ion-chip>
 
   </ion-toolbar>
 </ion-header>
@@ -44,7 +44,7 @@ Agendar hora
             <ion-icon name="person" item-start class="text-primary"></ion-icon>
             Datos Personales
           </ion-label>
-        </ion-item >
+        </ion-item>
         <ion-item (click)="validarSalida()">
           <ion-label floating>
             <ion-icon name="exit" item-start class="text-primary"></ion-icon>
@@ -55,17 +55,40 @@ Agendar hora
     </ion-content>
   </ion-menu>
   <ion-router-outlet Id="content"></ion-router-outlet>
-<!--
-fecha
-<ion-item class="subir">
-  <ion-datetime displayFormat="DD MMMM YYYY" placeholder="Seleccione fecha de atencion"></ion-datetime>
-</ion-item>
--->
-<ion-calendar class="margen"
-              [(ngModel)]="date"
-              (change)="onChange($event)"
-              [type]="type"
-              [format]="'YYYY-MM-DD'">
-</ion-calendar>
+  <div class="margen">
+    <ion-card>
+      <ion-card-content>
+        <p class="margen-text">seleccione la fecha de atencion</p>
+        <ion-calendar [(ngModel)]="date" (change)="onChange($event)" [type]="type"
+          [format]="'YYYY-MM-DD'" required>
+        </ion-calendar>
+        <ion-list>
+         
+        
+          <ion-item>
+            <ion-label>Especialidad</ion-label>
+            <ion-select placeholder="Seleccione" required>
+              <ion-select-option value="medg">Medicina General</ion-select-option>
+              <ion-select-option value="gyo">Ginecologia y Obstetricia</ion-select-option>
+              <ion-select-option value="bro">Broncupulmonar</ion-select-option>
+              <ion-select-option value="car">Cardiologia</ion-select-option>
+              <ion-select-option value="cir">Cirugia General</ion-select-option>
+              <ion-select-option value="cirp">Cirugia Plastica</ion-select-option>
+            </ion-select>
+          </ion-item>
+        
+    
+        
+        </ion-list>
 
+
+        <ion-button class="flotar-derecha" type="submit"  color="primary" (click)="onSubmit()">
+          Ver Horas
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    
+
+  </div>
 </ion-app>

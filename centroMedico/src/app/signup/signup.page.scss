@@ -8,5 +8,12 @@
 }
 
 .fondo-login{ 
-    --background: url(../../assets/img/fondo-sipnup-dos.jpg) 0 0/100% 100% no-repeat;
+    --background: radial-gradient(circle at 50.55% 46.87%, #ffffff 0, #ffffff 10%, #f5ffff 20%, #e7ffff 30%, #dbffff 40%, #cff7f3 50%, #c4dcdb 60%, #bbc5c5 70%, #b4b1b1 80%, #aca2a0 90%, #a69791 100%);
+}
+
+
+.margen{
+    --ion-background-color: transparent;
+    border-radius: 30px;
+    
 }

@@ -18,13 +18,18 @@ const routes: Routes = [
   {
     path: 'tab',
     loadChildren: () => import('./tab/tab.module').then( m => m.TabPageModule)
-  },  {
+  },
+  {
     path: 'agendar-hora',
     loadChildren: () => import('./agendar-hora/agendar-hora.module').then( m => m.AgendarHoraPageModule)
   },
   {
     path: 'pago',
     loadChildren: () => import('./pago/pago.module').then( m => m.PagoPageModule)
+  },
+  {
+    path: 'horas',
+    loadChildren: () => import('./horas/horas.module').then( m => m.HorasPageModule)
   },
 
 ];

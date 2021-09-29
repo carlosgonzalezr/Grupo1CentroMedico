@@ -17,6 +17,11 @@ export class AgendarHoraPage implements OnInit {
 
   constructor(public alerta: AlertController, private navCtrl: NavController) { }
 
+  onSubmit() {
+
+    this.navCtrl.navigateForward("horas");
+
+  }
 
   ngOnInit() {
   }
