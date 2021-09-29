@@ -8,12 +8,15 @@ import { AgendarHoraPageRoutingModule } from './agendar-hora-routing.module';
 
 import { AgendarHoraPage } from './agendar-hora.page';
 
+import { CalendarModule } from 'ion2-calendar';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AgendarHoraPageRoutingModule
+    AgendarHoraPageRoutingModule,
+    CalendarModule,
   ],
   declarations: [AgendarHoraPage]
 })

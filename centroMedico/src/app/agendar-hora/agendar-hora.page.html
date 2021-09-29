@@ -45,9 +45,7 @@ Agendar hora
             Datos Personales
           </ion-label>
         </ion-item >
-
-        <!-- <ion-item (click)="validarSalida()"> --> 
-        <ion-item >
+        <ion-item (click)="validarSalida()">
           <ion-label floating>
             <ion-icon name="exit" item-start class="text-primary"></ion-icon>
             Salir
@@ -57,12 +55,17 @@ Agendar hora
     </ion-content>
   </ion-menu>
   <ion-router-outlet Id="content"></ion-router-outlet>
-
+<!--
 fecha
 <ion-item class="subir">
-  <ion-datetime displayFormat="DD MMMM YYYY" placeholder="Seleccione fecha de atencion" [min]="today"></ion-datetime>
+  <ion-datetime displayFormat="DD MMMM YYYY" placeholder="Seleccione fecha de atencion"></ion-datetime>
 </ion-item>
-
-
+-->
+<ion-calendar class="margen"
+              [(ngModel)]="date"
+              (change)="onChange($event)"
+              [type]="type"
+              [format]="'YYYY-MM-DD'">
+</ion-calendar>
 
 </ion-app>
