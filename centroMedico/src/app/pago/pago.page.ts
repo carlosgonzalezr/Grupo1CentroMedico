@@ -37,7 +37,7 @@ export class PagoPage implements OnInit {
       cssClass: 'my-custom-class',
       header: 'Error',
       //subHeader: 'Subtitle',
-      message: 'Por favor ingresar los campos que faltan.',
+      message: 'Datos no válidos',
       buttons: ['OK']
     });
 
