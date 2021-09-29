@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { CalendarComponentOptions, } from 'ion2-calendar';
+import { CalendarComponentOptions, } from 'ion2-calendar'
 import { NavController, AlertController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
+import{ModalcovidPage} from '../modalcovid/modalcovid.page';
 
 
 @Component({
-  selector: 'app-tab',
+  selector: 'app-tab', 
   templateUrl: './tab.page.html',
   styleUrls: ['./tab.page.scss'],
 })
 export class TabPage implements OnInit {
+
 
   dateMulti: string[];
   type: 'string'; // 'string' | 'js-date' | 'moment' | 'time' | 'object'
@@ -16,11 +19,22 @@ export class TabPage implements OnInit {
     pickMode: 'multi'
   };
 
-  constructor(public alerta: AlertController, private navCtrl: NavController) { }
+  constructor(public alerta: AlertController,
+     private navCtrl: NavController,
+     public modalController: ModalController,
+     ) { }
 
 
   ngOnInit() {
   }
+ async openModal(){
+    const modal = await this.modalController.create({
+      component: ModalcovidPage,
+      cssClass: 'my-custom-class'
+    });
+    return await modal.present();
+  }
+
   async validarSalida() {
     const alert = await this.alerta.create({
       cssClass: 'my-custom-class',

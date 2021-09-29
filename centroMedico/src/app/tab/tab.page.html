@@ -1,3 +1,5 @@
+<ion-content class="fondo-tab">
+
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
@@ -12,9 +14,12 @@
       </ion-avatar>
       <ion-label>Juan</ion-label>
     </ion-chip>
-
+    <ion-button expand="full" (click)="openModal()"  class="boton">
+      COVID-19
+    </ion-button>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-app>
   <ion-menu side="start" menuId="first" contentId="content">
@@ -52,16 +57,19 @@
           </ion-label>
         </ion-item>
       </ion-list>
+    
               
     </ion-content>
   </ion-menu>
   <ion-router-outlet Id="content"></ion-router-outlet>
   <ion-content>
+
     <ion-infinite-scroll>
       <ion-infinite-scroll-content
         loadingSpinner="bubbles"
         loadingText="Cargando">
-        <ion-card class="margen">
+
+        <ion-card class="margen fondocard" >
           <ion-card-header>
             <ion-img src="assets\img\doctor.jpg"></ion-img>
             <ion-card-title>Los mejores medicos para nuestros pacientes</ion-card-title>
@@ -76,7 +84,7 @@
             Incorporar y mantener los médicos más calificados del país, tanto desde el punto de vista técnico, como su calidad humana y vocación académica.
           </ion-card-content>
         </ion-card>
-        <ion-card class="margen">
+        <ion-card class="margen fondocard">
           <ion-card-header>
             <ion-img src="assets\img\covid2.jpg"></ion-img>
             <ion-card-title>cuidate del covid-19</ion-card-title>
@@ -88,7 +96,7 @@
             Todos los virus mutan con el tiempo, pero algunos de sus cambios pueden impactar en sus propiedades, como el grado de transmisibilidad, la gravedad de la enfermedad o el rendimiento de las vacunas.
           </ion-card-content>
         </ion-card>
-        <ion-card class="margen">
+        <ion-card class="margen fondocard">
           <ion-card-header>
             <ion-img src="assets\img\dientes.jpg"></ion-img>
             <ion-card-title>Oferta de braquets!!!</ion-card-title>
@@ -99,6 +107,7 @@
           <ion-card-content>
             Disfruta de nuestros planes de ortodoncia con un 60% de descuento en tu tratamiento. ¡Aprovecha! Promoción por tiempo limitado. Pagos Fonasa e ISAPRES. Agenda tu hora.
           </ion-card-content>
+
         </ion-card>
         
         
@@ -109,3 +118,4 @@
 
 
 </ion-app>
+</ion-content>

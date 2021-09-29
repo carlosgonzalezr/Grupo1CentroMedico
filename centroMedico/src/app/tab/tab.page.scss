@@ -5,12 +5,27 @@
 .margen{
   margin-top: 100px;
 }
+.fondocard{
+  background-color: honeydew!important;
+}
 
 .avatar{
   float: right;
 }
+.boton{
+  float: right;
+  border: radius 200px;
+  margin:5px;
+  
 
+  
+}
 .titulo{
     float: left;
     margin-top: 10px;
 }
+
+.fondo-tab{ 
+  --background: url(../../assets/img/clinica.jpg) 0 0/100% 100% no-repeat;
+}
+
