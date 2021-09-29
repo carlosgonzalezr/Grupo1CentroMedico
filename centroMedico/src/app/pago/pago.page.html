@@ -1,31 +1,99 @@
-<ion-content>
-  <ion-card class="margen">
-    <ion-card-content color="light">
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="titulo">
+      Pago de Atención
+    </ion-title>
+    <ion-chip class="avatar">
+      <ion-avatar>
+        <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg">
+      </ion-avatar>
+      <ion-label>Juan</ion-label>
+    </ion-chip>
 
-      <ion-item>
-        <ion-label position="floating">Número de Tarjeta</ion-label>
-        <ion-input [(ngModel)]="cardnumber" type="text" required></ion-input>
-      </ion-item>
+  </ion-toolbar>
+</ion-header>
 
-      <ion-item >
-        <ion-label position="floating">Nombre Completo</ion-label>
-        <ion-input [(ngModel)]="fullname" type="text" required></ion-input>
-      </ion-item>
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="content">
+    <ion-header>
+      <ion-toolbar color="success">
+        <ion-title>Content</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content color="light">
+      <ion-list>
+        <h1 class="ion-text-center">Menu Principal</h1>
+        <!--<ion-icon name="calendar-outline"></ion-icon>-->
+        <ion-item [routerLink]="['/tab']">
+          <ion-label floating>
+            <ion-icon name="home" item-start class="text-primary"></ion-icon>
+            Inicio
+          </ion-label>
+        </ion-item>
+        <ion-item [routerLink]="['/agendar-hora']">
+          <ion-label floating>
+            <ion-icon name="add-circle-outline" item-start class="text-primary"></ion-icon>
+            Agendar Hora
+          </ion-label>
+        </ion-item>
+        <ion-item [routerLink]="['/datos-personales']">
+          <ion-label floating>
+            <ion-icon name="person" item-start class="text-primary"></ion-icon>
+            Datos Personales
+          </ion-label>
+        </ion-item>
+        <ion-item [routerLink]="['/pago']">
+          <ion-label floating>
+            <ion-icon name="card" item-start class="text-primary"></ion-icon>
+            Pago
+          </ion-label>
+        </ion-item>
+        <ion-item (click)="validarSalida()">
+          <ion-label floating>
+            <ion-icon name="exit" item-start class="text-primary"></ion-icon>
+            Salir
+          </ion-label>
+        </ion-item>
+      </ion-list>
 
-      <ion-item >
-        <ion-label position="floating">MM/YY</ion-label>
-        <ion-input [(ngModel)]="fvencimiento" type="text" required></ion-input>
-      </ion-item>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet Id="content"></ion-router-outlet>
 
-      <ion-item>
-        <ion-label position="floating">CVC</ion-label>
-        <ion-input [(ngModel)]="cvc" type="password" required></ion-input>
-      </ion-item>
+  <ion-content>
+    <ion-card class="margen">
+      <ion-card-content color="light">
 
-      <ion-button class="ion-margin-top" type="submit" expand="block" color="primary" (click)="onSubmit()">
-        Pagar
-      </ion-button>
-      <img class="imagen-pago" src="../../assets/img/fondo-pago.webp">
-    </ion-card-content>
-  </ion-card>
-</ion-content>
+        <ion-item>
+          <ion-label position="floating">Número de Tarjeta</ion-label>
+          <ion-input [(ngModel)]="cardnumber" type="text" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Nombre Completo</ion-label>
+          <ion-input [(ngModel)]="fullname" type="text" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">MM/YY</ion-label>
+          <ion-input [(ngModel)]="fvencimiento" type="text" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">CVC</ion-label>
+          <ion-input [(ngModel)]="cvc" type="password" required></ion-input>
+        </ion-item>
+
+        <ion-button class="ion-margin-top" type="submit" expand="block" color="primary" (click)="onSubmit()">
+          Pagar
+        </ion-button>
+        <img class="imagen-pago" src="../../assets/img/fondo-pago.webp">
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+
+
+</ion-app>
