@@ -8,11 +8,17 @@
 }
 
 .fondo-login{ 
-    --background: url(../../assets/img/fondo-centro-medico.jpg) 0 0/100% 100% no-repeat;
+    --background: radial-gradient(circle at 50% 50%, #ffffff 0, #ffffff 10%, #f5ffff 20%, #e7ffff 30%, #dbffff 40%, #cff7f3 50%, #c5dcdc 60%, #bcc5c6 70%, #b4b2b2 80%, #ada3a0 90%, #a69892 100%), url(../../assets/img/fondo-centro-medico.jpg) 0 0/100% 100% no-repeat;
 }
 
+
 .margen{
-    --ion-background-color: #fdfdfd!important;
+    --ion-background-color: transparent;
+    border-radius: 30px;
     
 }
+
+.alert-wrapper {
+    --background: #221010;
+  }
 

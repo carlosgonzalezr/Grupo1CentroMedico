@@ -32,9 +32,9 @@ export class LoginPage implements OnInit {
   async validacionFormulario() {
     const alert = await this.alerta.create({
       cssClass: 'my-custom-class',
-      header: 'Error',
+      header: 'Alerta',
       //subHeader: 'Subtitle',
-      message: 'Los campos estan vacios',
+      message: 'Hay campos que no se ingresaron correctamente.',
       buttons: ['OK']
     });
 
