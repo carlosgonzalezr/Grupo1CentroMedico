@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-avatar class="avatar">
+  <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+</ion-avatar>
+
+<ion-content class="fondo-login">
+  <ion-card class="margen">
+    <ion-card-content color="light">
+
+      <ion-item>
+        <ion-label >Nombre</ion-label>
+        <ion-input type="text" placeholder="Juan"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label >Apellido</ion-label>
+        <ion-input type="text" placeholder="Monroe"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label >Email</ion-label>
+        <ion-input type="text" placeholder="emailfalso@duocuc.cl"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label >Contraseña</ion-label>
+        <ion-input type="password" placeholder="*******"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label >Dirección</ion-label>
+        <ion-input type="text" placeholder="Calle falsa 123" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label >Celular</ion-label>
+        <ion-input type="text" placeholder="+569 1234 5678" ></ion-input>
+      </ion-item>
+
+      <ion-list>
+        
+        <ion-item>
+          <ion-label>Enfermedades</ion-label>
+          <ion-select multiple="true" cancelText="Cancelar" okText="Guardar">
+            <ion-select-option value="Obesidad">Obesidad</ion-select-option>
+            <ion-select-option value="Diabetes">Diabetes Mellitus 2</ion-select-option>
+            <ion-select-option value="Hipertensión">Hipertensión Arterial</ion-select-option>
+            <ion-select-option value="Metabólico">Síndrome Metabólico </ion-select-option>
+            <ion-select-option value="VIH">VIH/SIDA</ion-select-option>
+            <ion-select-option value="Insuficiencia">Insuficiencia Renal Crónica</ion-select-option>
+            <ion-select-option value="Artritis">Artritis</ion-select-option>
+            <ion-select-option value="Epilepsia">Epilepsia</ion-select-option>
+            
+          </ion-select>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>Alergias</ion-label>
+          <ion-select multiple="true" cancelText="Cancelar" okText="Guardar" >
+            <ion-select-option value="ácaros">Alergia a los ácaros </ion-select-option>
+            <ion-select-option value="polen">Alergia al polen </ion-select-option>
+            <ion-select-option value="insectos">Alergia a picaduras de insectos</ion-select-option>
+            <ion-select-option value="moho">Alergia al moho </ion-select-option>
+            <ion-select-option value="látex">Alergia al látex </ion-select-option>
+            <ion-select-option value="alimentos">Alergia a alimentos </ion-select-option>
+
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Sexo</ion-label>
+          <ion-select class="custom-options">
+            <ion-select-option value="femenino">Femenino</ion-select-option>
+            <ion-select-option value="masculino">Masculino</ion-select-option>
+                       
+          </ion-select>
+        </ion-item>
+
+      </ion-list>
+
+      <ion-button class="ion-margin-top" type="submit" expand="block" color="success" (click)="validarSalida()">
+        Guardar Datos
+      </ion-button>
+
+      
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>
