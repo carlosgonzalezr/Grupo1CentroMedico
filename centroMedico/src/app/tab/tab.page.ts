@@ -39,7 +39,7 @@ export class TabPage implements OnInit {
     const alert = await this.alerta.create({
       cssClass: 'my-custom-class',
       header: 'Confirmacion!',
-      message: 'Esta, seguro de salir?',
+      message: '¿Esta seguro de salir?',
       buttons: [
         {
           text: 'Cancelar',
