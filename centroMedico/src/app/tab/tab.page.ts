@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CalendarComponentOptions, } from 'ion2-calendar'
 import { NavController, AlertController } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
-import{ModalcovidPage} from '../modalcovid/modalcovid.page';
+import { ModalcovidPage } from '../modalcovid/modalcovid.page';
 
 
 @Component({
