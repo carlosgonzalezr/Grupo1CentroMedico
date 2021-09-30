@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, AlertController } from '@ionic/angular';
 
+import { ModalController } from '@ionic/angular';
+
 
 
 @Component({
@@ -10,13 +12,13 @@ import { NavController, AlertController } from '@ionic/angular';
 })
 export class ModalcovidPage implements OnInit {
 
-  constructor(private crtNav: NavController) { }
+  constructor(private crtNav: NavController, private modalCtrl: ModalController) { }
 
   ngOnInit() {
   }
 
-  onSubmit(){
-     this.crtNav.navigateForward("tab");
+  closeModal() {
+    this.modalCtrl.dismiss();
   }
 
 }
