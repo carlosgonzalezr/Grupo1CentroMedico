@@ -46,4 +46,4 @@ class ListUser(APIView):
     def delete(self, request, id=None):
         item = get_object_or_404(User, id=id)
         item.delete()
-        return Response({"status": "success", "data": "User Deletedd"})
+        return Response({"status": "success", "data": "User Deleted"})
