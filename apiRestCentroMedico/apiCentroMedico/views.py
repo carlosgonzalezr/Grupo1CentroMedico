@@ -41,8 +41,6 @@ class ListUser(APIView):
     def delete(self, request, id=None):
         item = get_object_or_404(User, id=id)
         item.delete()
-<<<<<<< HEAD
-=======
         return Response({"status": "success", "data": "User Deleted"})
 
 class ListPaciente(APIView):
@@ -79,5 +77,4 @@ class ListPaciente(APIView):
     def delete(self, request, id=None):
         item = get_object_or_404(Paciente, correo=id)
         item.delete()
->>>>>>> cambiospalomo
         return Response({"status": "success", "data": "User Deleted"})
