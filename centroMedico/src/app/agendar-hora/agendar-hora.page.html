@@ -35,8 +35,14 @@
         </ion-item>
         <ion-item [routerLink]="['/agendar-hora']">
           <ion-label floating>
-            <ion-icon name="add-circle-outline" item-start class="text-primary"></ion-icon>
+            <ion-icon name="add-circle" item-start class="text-primary"></ion-icon>
             Agendar Hora
+          </ion-label>
+        </ion-item>
+        <ion-item [routerLink]="['/horas']">
+          <ion-label floating>
+            <ion-icon name="time-sharp" item-start class="text-primary"></ion-icon>
+            Horas
           </ion-label>
         </ion-item>
         <ion-item [routerLink]="['/datos-personales']">
@@ -62,38 +68,58 @@
   </ion-menu>
   <ion-router-outlet Id="content"></ion-router-outlet>
   <div class="margen">
+
+<!--Formulario-->
+    
     <ion-card>
       <ion-card-content>
-        <p class="margen-text">Seleccione la fecha de atención</p>
-        <ion-calendar [(ngModel)]="date" (change)="onChange($event)" [type]="type"
-          [format]="'YYYY-MM-DD'" required>
-        </ion-calendar>
-        <ion-list>
-         
-        
+        <form>
+
           <ion-item>
-            <ion-label>Especialidad</ion-label>
+            <ion-label position="floating">Correo</ion-label>
+            <ion-input  type="text" required></ion-input>
+          </ion-item>
+
+        
+        
+
+        <ion-list>
+          <ion-item>
+            <ion-label>Medico</ion-label>
             <ion-select placeholder="Seleccione" required>
-              <ion-select-option value="medg">Medicina General</ion-select-option>
-              <ion-select-option value="gyo">Ginecologia y Obstetricia</ion-select-option>
-              <ion-select-option value="bro">Broncupulmonar</ion-select-option>
-              <ion-select-option value="car">Cardiologia</ion-select-option>
-              <ion-select-option value="cir">Cirugia General</ion-select-option>
-              <ion-select-option value="cirp">Cirugia Plastica</ion-select-option>
+              <ion-select-option value="3">medico prueba</ion-select-option>
+              <ion-select-option value="4">nose llama</ion-select-option>
             </ion-select>
           </ion-item>
-        
-    
-        
         </ion-list>
 
+        <ion-item>
+          <ion-label>DD MM YYYY</ion-label>
+          <ion-datetime displayFormat="DD MM YYYY" min="2021-11-01" max="2022-06" placeholder="Seleccione fecha de atención"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>DD MM YYYY</ion-label>
+          <ion-datetime displayFormat="DD MM YYYY" min="2021-11-01" max="2022-06" placeholder="Seleccione fecha de atención"></ion-datetime>
+        </ion-item>
+
+        <ion-list>
+          <ion-item>
+            <ion-label>Sucursal</ion-label>
+            <ion-select placeholder="Seleccione" required>
+              <ion-select-option value="1">Centro Quillicura</ion-select-option>
+              <ion-select-option value="2">Centro Renca</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
 
         <ion-button class="flotar-derecha" type="submit"  color="primary" (click)="onSubmit()">
           Ver Horas
         </ion-button>
+        </form>
       </ion-card-content>
     </ion-card>
-
+<!--Fin formulario-->
     
 
   </div>
