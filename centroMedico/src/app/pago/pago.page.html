@@ -22,23 +22,26 @@
       <ion-card-content color="light">
 
         <ion-item>
-          <ion-label position="floating">Número de Tarjeta</ion-label>
-          <ion-input [(ngModel)]="cardnumber" type="text" required></ion-input>
+          <ion-label position="floating">tipo de pago</ion-label>
+              <ion-select multiple="true" cancelText="Cancelar" okText="Guardar">
+                <ion-select-option value="Efectivo">efectivo</ion-select-option>
+                <ion-select-option value="Tarjeta">tarjetas</ion-select-option>
+              </ion-select>
         </ion-item>
 
         <ion-item>
-          <ion-label position="floating">Nombre Completo</ion-label>
-          <ion-input [(ngModel)]="fullname" type="text" required></ion-input>
+          <ion-label position="floating">ID agenda</ion-label>
+          <ion-input [(ngModel)]="idagenda" type="text" required></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label position="floating">MM/YY</ion-label>
-          <ion-input [(ngModel)]="fvencimiento" type="text" required></ion-input>
+          <ion-label position="floating">fecha pago</ion-label>
+          <ion-input [(ngModel)]="fechaPago" type="text" required></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label position="floating">CVC</ion-label>
-          <ion-input [(ngModel)]="cvc" type="password" required></ion-input>
+          <ion-label position="floating">Monto</ion-label>
+          <ion-input [(ngModel)]="monto" type="text" required></ion-input>
         </ion-item>
 
         <ion-button class="ion-margin-top" type="submit" expand="block" color="primary" (click)="onSubmit()">
