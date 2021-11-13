@@ -35,8 +35,9 @@ const routes: Routes = [
   {
     path: 'horas',
     loadChildren: () => import('./horas/horas.module').then( m => m.HorasPageModule)
-  },  {
-    path: 'datos-personales',
+  },
+  {
+    path: 'datos-personales/:correo',
     loadChildren: () => import('./datos-personales/datos-personales.module').then( m => m.DatosPersonalesPageModule)
   },
 
