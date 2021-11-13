@@ -87,8 +87,20 @@
           <ion-item>
             <ion-label>Medico</ion-label>
             <ion-select placeholder="Seleccione" required>
-              <ion-select-option value="3">medico prueba</ion-select-option>
-              <ion-select-option value="4">nose llama</ion-select-option>
+              <ion-select-option value="greghouse@medico.com">Gregory House</ion-select-option>
+              <ion-select-option value="correo@medico.com">Nose Llama</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+
+        <ion-list>
+          <ion-item>
+            <ion-label>Especialidad</ion-label>
+            <ion-select placeholder="Seleccione" required>
+              <ion-select-option value="1">Medicina general</ion-select-option>
+              <ion-select-option value="2">naruto</ion-select-option>
+              <ion-select-option value="3">Neurologia</ion-select-option>
+              <ion-select-option value="4">Cardiologia</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-list>
@@ -99,8 +111,8 @@
         </ion-item>
 
         <ion-item>
-          <ion-label>DD MM YYYY</ion-label>
-          <ion-datetime displayFormat="DD MM YYYY" min="2021-11-01" max="2022-06" placeholder="Seleccione fecha de atención"></ion-datetime>
+          <ion-label>h:mm a</ion-label>
+          <ion-datetime displayFormat="h:mm a" placeholder="Seleccione hora de atención"></ion-datetime>
         </ion-item>
 
         <ion-list>
