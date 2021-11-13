@@ -46,6 +46,13 @@ const routes: Routes = [
   },
 
 
+
+  {
+    path: 'exito',
+    loadChildren: () => import('./exito/exito-routing.module').then( m => m.ExitoPageRoutingModule)
+  },
+
+
 ];
 
 

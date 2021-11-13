@@ -1,3 +1,4 @@
+
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
@@ -16,41 +17,34 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-app>
-  <ion-content>
-    <ion-card class="margen">
-      <ion-card-content color="light">
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="pagoForm" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">tipo de pago</ion-label>
+        <ion-input formControlName="tipo" type="text" required></ion-input>
+      </ion-item>
 
-        <ion-item>
-          <ion-label position="floating">tipo de pago</ion-label>
-              <ion-select multiple="true" cancelText="Cancelar" okText="Guardar">
-                <ion-select-option value="Efectivo">efectivo</ion-select-option>
-                <ion-select-option value="Tarjeta">tarjetas</ion-select-option>
-              </ion-select>
-        </ion-item>
+      <ion-item>
+        <ion-label position="floating">agenda</ion-label>
+        <ion-input formControlName="agenda" type="text" required></ion-input>
+      </ion-item>
 
-        <ion-item>
-          <ion-label position="floating">ID agenda</ion-label>
-          <ion-input [(ngModel)]="idagenda" type="text" required></ion-input>
-        </ion-item>
+      <ion-item>
+        <ion-label position="floating">fecha</ion-label>
+        <ion-input formControlName="fecha" type="text" required></ion-input>
+      </ion-item>
 
-        <ion-item>
-          <ion-label position="floating">fecha pago</ion-label>
-          <ion-input [(ngModel)]="fechaPago" type="text" required></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label position="floating">Monto</ion-label>
-          <ion-input [(ngModel)]="monto" type="text" required></ion-input>
-        </ion-item>
-
-        <ion-button class="ion-margin-top" type="submit" expand="block" color="primary" (click)="onSubmit()">
-          Pagar
-        </ion-button>
-        <img class="imagen-pago" src="../../assets/img/fondo-pago.webp">
-      </ion-card-content>
-    </ion-card>
-  </ion-content>
-//hola //
-
-</ion-app>
+      <ion-item>
+        <ion-label position="floating">monto</ion-label>
+        <ion-input formControlName="monto" type="text" required></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+            <ion-button type="submit" color="primary" expand="block" [routerLink]="['/exito']">Pagar</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+</ion-content>
+//hola

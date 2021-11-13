@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { NavController, AlertController } from '@ionic/angular';
+import {Router} from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import {PagoCrudService} from './../services/pago-crud.service'
+import { RouterModule } from '@angular/router';
+ 
 
 @Component({
   selector: 'app-pago',
@@ -7,72 +12,42 @@ import { NavController, AlertController } from '@ionic/angular';
   styleUrls: ['./pago.page.scss'],
 })
 export class PagoPage implements OnInit {
-  cardnumber: string = "";
-  fullname: string = "";
-  fvencimiento: string = "";
-  cvc: string = "";
 
+  pagoForm:FormGroup;
 
-
-  constructor(public alerta: AlertController, private navCtrl:NavController) { }
-
-  ngOnInit() {
+  constructor(
+    
+    private router: Router,
+    public formBuilder: FormBuilder,
+    private zone:NgZone,
+    private PagoCrudService: PagoCrudService) { 
+    this.pagoForm = this.formBuilder.group({
+        tipo:[''],
+        agenda:[''],
+        fecha:[''],
+        monto:['']
+        
+      })
   }
+
+  ngOnInit() {}
 
   onSubmit() {
-     
-    if(this.cardnumber=="" || this.fullname =="" || this.fvencimiento=="" || this.cvc==""){
-
-          this.validacionFormulario();
-
+    if (!this.pagoForm.valid) {
+      return false;
+    } else {
+      this.PagoCrudService.createPago(this.pagoForm.value)
+        .subscribe((response) => {
+          this.zone.run(() => {
+            this.pagoForm.reset();
+            this.router.navigate(['/list']);
+          })
+        });
     }
-    else{
-
-      this.navCtrl.navigateForward("login");
-
-    }
   }
-  async validacionFormulario() {
-    const alert = await this.alerta.create({
-      cssClass: 'my-custom-class',
-      header: 'Error',
-      //subHeader: 'Subtitle',
-      message: 'Datos no válidos',
-      buttons: ['OK']
-    });
-
-    await alert.present();
-
-    const { role } = await alert.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
-  }
-  
-  async validarSalida() {
-    const alert = await this.alerta.create({
-      cssClass: 'my-custom-class',
-      header: 'Confirmacion!',
-      message: '¿Esta seguro de salir?',
-      buttons: [
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {
-            console.log('Confirm Cancel: blah');
-          }
-        }, {
-          text: 'Salir',
-          handler: () => {
-            console.log('Confirm Okay');
-            this.navCtrl.navigateForward("login");
-          }
-        }
-      ]
-    });
-
-    await alert.present();
-  }
-
-
 
 }
+
+
+
+
