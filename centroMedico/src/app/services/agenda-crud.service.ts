@@ -5,12 +5,13 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 export class Agenda {
-  _id: number;
-  correo: string;
-  id_medico: number;
-  fecha_inicio: string;
-  fecha_termino: string;
-  id_sucursal: number;
+  _id: string;
+  paciente: string;
+  medico: string;
+  especialidad: string;
+  fecha: string;
+  hora: string;
+  sucursal: string;
 }
 
 @Injectable({
@@ -22,7 +23,7 @@ export class AgendaCrudService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Token 6aba75be8bf8c33b188a3c3696af26e1ba5b2cf9' })
+      'Authorization': 'Token 7f4f2dc7c09d9a33fbee28ce1c321000f0490dea' })
   };
 
   constructor(private httpClient: HttpClient) { }

@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from "@angular/forms";
 import { AgendaCrudService } from './../services/agenda-crud.service';
 
-import { CalendarComponentOptions, } from 'ion2-calendar';
 import { NavController, AlertController } from '@ionic/angular';
 
 
@@ -14,25 +13,23 @@ import { NavController, AlertController } from '@ionic/angular';
   styleUrls: ['./agendar-hora.page.scss'],
 })
 export class AgendarHoraPage implements OnInit {
+
   agendaForm: FormGroup;
 
-
-  dateMulti: string[];
-  type: 'string'; // 'string' | 'js-date' | 'moment' | 'time' | 'object'
-  optionsMulti: CalendarComponentOptions = {
-    pickMode: 'multi'
-  };
-
-  constructor(public alerta: AlertController, private navCtrl: NavController,private router: Router,
+  constructor(
+    public alerta: AlertController,
+    private navCtrl: NavController,
+    private router: Router,
     public formBuilder: FormBuilder,
     private zone: NgZone,
     private agendaCrudService: AgendaCrudService) {
       this.agendaForm = this.formBuilder.group({
-        correo: [''],
-        id_medico: [''],
-        fecha_inicio: [''],
-        fecha_termino: [''],
-        id_sucursal: ['']
+        paciente: [''],
+        medico: [''],
+        especialidad: [''],
+        fecha: [''],
+        hora: [''],
+        sucursal: ['']
       })
      }
 
