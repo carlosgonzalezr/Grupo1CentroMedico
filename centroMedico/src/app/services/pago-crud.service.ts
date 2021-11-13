@@ -16,7 +16,7 @@ export class Pago {
   providedIn: 'root'
 })
 export class PagoCrudService {
-  endpoint ='https://jpalomo.pythonanywhere.com/api/pagos';
+  endpoint ='https://jpalomo.pythonanywhere.com/api/pagos/';
 
   httpOptions = {
     headers: new HttpHeaders({
