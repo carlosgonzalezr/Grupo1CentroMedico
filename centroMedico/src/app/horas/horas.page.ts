@@ -56,7 +56,7 @@ export class HorasPage implements OnInit {
   }
 
   removeAgenda(agenda, i){
-    if(window.confirm('Are you sure?')){
+    if(window.confirm('Estas seguro?')){
       this.AgendaCrudService.deleteAgenda(agenda.id)
       .subscribe(()=>{
         this.ionViewDidEnter();
