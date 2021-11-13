@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-icon class="flecha" name="arrow-back-outline" [routerLink]="['/horas']"></ion-icon>
+    </ion-buttons>
+    <ion-title class="titulo">
+      Pago exitoso
+    </ion-title>
+    <ion-chip class="avatar">
+      <ion-avatar>
+        <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg">
+      </ion-avatar>
+      <ion-label>Juan</ion-label>
+    </ion-chip>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-header>
+    <ion-img src="assets\img\pago-exitoso.png"></ion-img>
+  </ion-card-header>
+
+  <ion-button class="ion-margin-top" type="submit" expand="block" color="primary" (click)="onSubmit()"  [routerLink]="['/tab']" >
+    volver 
+  </ion-button>
+</ion-content>
