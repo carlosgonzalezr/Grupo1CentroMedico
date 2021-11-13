@@ -7,9 +7,9 @@ import { catchError, tap } from 'rxjs/operators';
 export class Pago {
   _id: string;
   tipo: string;
-  agenda: string;
+  agenda: number;
   fecha: string;
-  monto: string;
+  monto: number;
 }
 
 @Injectable({
