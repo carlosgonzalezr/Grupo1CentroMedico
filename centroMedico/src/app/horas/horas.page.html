@@ -81,46 +81,27 @@
       <p>7:45</p>
     </ion-item>
 
-    <ion-item button (click)="click()">
-      <ion-thumbnail slot="start">
-        <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg">
-      </ion-thumbnail>
+      <ion-list>
+    <ion-item *ngFor="let agenda of Agendas">
       <ion-label>
-        <h2>Dr. nombre</h2>
-        <p>Especialidad</p>
+        <h2>{{agenda.paciente}}</h2>
+        <h3>{{agenda.medico}}</h3>
+        <h3>{{agenda.especialidad}}</h3>
+        <h3>{{agenda.fecha}}</h3>
+        <h3>{{agenda.hora}}</h3>
+        <h3>{{agenda.sucursal}}</h3>
       </ion-label>
-      <p>7:45</p>
+
+      <div class="item-note" item-end>
+        <button ion-button clear [routerLink]="['/update/', agenda.id]">
+          <ion-icon name="create" style="zoom:1.5"></ion-icon>
+        </button>
+        <button ion-button clear (click)="removeAgenda(agenda)">
+          <ion-icon name="trash" style="zoom:1.5"></ion-icon>
+        </button>
+      </div>
     </ion-item>
-    <ion-item button (click)="click()">
-      <ion-thumbnail slot="start">
-        <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg">
-      </ion-thumbnail>
-      <ion-label>
-        <h2>Dr. nombre</h2>
-        <p>Especialidad</p>
-      </ion-label>
-      <p>7:45</p>
-    </ion-item>
-    <ion-item button (click)="click()">
-      <ion-thumbnail slot="start">
-        <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg">
-      </ion-thumbnail>
-      <ion-label>
-        <h2>Dr. nombre</h2>
-        <p>Especialidad</p>
-      </ion-label>
-      <p>7:45</p>
-    </ion-item>
-    <ion-item button (click)="click()">
-      <ion-thumbnail slot="start">
-        <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg">
-      </ion-thumbnail>
-      <ion-label>
-        <h2>Dr. nombre</h2>
-        <p>Especialidad</p>
-      </ion-label>
-      <p>7:45</p>
-    </ion-item>
+  </ion-list>
 
   </div>
 </ion-app>
