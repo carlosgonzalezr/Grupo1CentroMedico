@@ -4,10 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AgendarHoraPageRoutingModule } from './agendar-hora-routing.module';
+import { UpdateHoraPageRoutingModule } from './update-hora-routing.module';
 
-import { AgendarHoraPage } from './agendar-hora.page';
-
+import { UpdateHoraPage } from './update-hora.page';
 
 @NgModule({
   imports: [
@@ -15,8 +14,8 @@ import { AgendarHoraPage } from './agendar-hora.page';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    AgendarHoraPageRoutingModule,
+    UpdateHoraPageRoutingModule
   ],
-  declarations: [AgendarHoraPage]
+  declarations: [UpdateHoraPage]
 })
-export class AgendarHoraPageModule {}
+export class UpdateHoraPageModule {}

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AgendaCrudService } from './../services/agenda-crud.service';
+import { Router } from '@angular/router';
+
 import { NavController, AlertController} from '@ionic/angular';
 
 @Component({
@@ -7,8 +10,10 @@ import { NavController, AlertController} from '@ionic/angular';
   styleUrls: ['./horas.page.scss'],
 })
 export class HorasPage implements OnInit {
+  Agendas:any = [];
 
-  constructor(public alerta: AlertController, private navCtrl: NavController) { }
+  constructor(public alerta: AlertController, private navCtrl: NavController, private AgendaCrudService: AgendaCrudService,
+    private router: Router) { }
   click() {
 
     this.navCtrl.navigateForward("pago");
@@ -42,6 +47,22 @@ export class HorasPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  ionViewDidEnter(){
+    this.AgendaCrudService.getAgendas().subscribe((response)=>{
+      this.Agendas = response['data'];
+    })
+  }
+
+  removeAgenda(agenda, i){
+    if(window.confirm('Estas seguro?')){
+      this.AgendaCrudService.deleteAgenda(agenda.id)
+      .subscribe(()=>{
+        this.ionViewDidEnter();
+        console.log('Agenda deleted')
+      })
+    }
   }
 
 }

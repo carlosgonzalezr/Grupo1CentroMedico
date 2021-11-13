@@ -30,18 +30,22 @@ const routes: Routes = [
   },
   {
     path: 'pago',
-    loadChildren: () => import('./pago/pago.module') .then(m => m.PagoPageModule)
+    loadChildren: () => import('./pago/pago.module').then( m => m.PagoPageModule)
   },
-
   {
     path: 'horas',
     loadChildren: () => import('./horas/horas.module').then( m => m.HorasPageModule)
   },
-
   {
     path: 'datos-personales',
     loadChildren: () => import('./datos-personales/datos-personales.module').then( m => m.DatosPersonalesPageModule)
   },
+  {
+    path: 'update-hora/:id',
+    loadChildren: () => import('./update-hora/update-hora.module').then( m => m.UpdateHoraPageModule)
+  },
+
+
 
   {
     path: 'exito',

@@ -5,13 +5,13 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 export class Agenda {
-  _id: string;
+  _id: number;
   paciente: string;
   medico: string;
-  especialidad: string;
+  especialidad: number;
   fecha: string;
   hora: string;
-  sucursal: string;
+  sucursal: number;
 }
 
 @Injectable({
