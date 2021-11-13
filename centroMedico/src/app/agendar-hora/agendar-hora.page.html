@@ -73,7 +73,7 @@
     
     <ion-card>
       <ion-card-content>
-        <form>
+        <form [formGroup]="agendaForm" (ngSubmit)="onSubmit()">
 
           <ion-item>
             <ion-label position="floating">Correo</ion-label>
@@ -114,7 +114,7 @@
         </ion-list>
 
         <ion-button class="flotar-derecha" type="submit"  color="primary" (click)="onSubmit()">
-          Ver Horas
+          Agendar hora
         </ion-button>
         </form>
       </ion-card-content>

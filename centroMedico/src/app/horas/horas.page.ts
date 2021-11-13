@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController} from '@ionic/angular';
+import { NavController, AlertController} from '@ionic/angular';
 
 @Component({
   selector: 'app-horas',
@@ -8,7 +8,7 @@ import { NavController} from '@ionic/angular';
 })
 export class HorasPage implements OnInit {
 
-  constructor(private navCtrl: NavController) { }
+  constructor(public alerta: AlertController, private navCtrl: NavController) { }
   click() {
 
     this.navCtrl.navigateForward("pago");
@@ -16,6 +16,32 @@ export class HorasPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  async validarSalida() {
+    const alert = await this.alerta.create({
+      cssClass: 'my-custom-class',
+      header: 'Confirmacion!',
+      message: '¿Esta seguro de salir?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Salir',
+          handler: () => {
+            console.log('Confirm Okay');
+            this.navCtrl.navigateForward("login");
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
 }

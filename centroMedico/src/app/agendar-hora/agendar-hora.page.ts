@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
+
+import { Router } from '@angular/router';
+import { FormGroup, FormBuilder } from "@angular/forms";
+import { AgendaCrudService } from './../services/agenda-crud.service';
+
 import { CalendarComponentOptions, } from 'ion2-calendar';
 import { NavController, AlertController } from '@ionic/angular';
 
@@ -9,17 +14,42 @@ import { NavController, AlertController } from '@ionic/angular';
   styleUrls: ['./agendar-hora.page.scss'],
 })
 export class AgendarHoraPage implements OnInit {
+  agendaForm: FormGroup;
+
+
   dateMulti: string[];
   type: 'string'; // 'string' | 'js-date' | 'moment' | 'time' | 'object'
   optionsMulti: CalendarComponentOptions = {
     pickMode: 'multi'
   };
 
-  constructor(public alerta: AlertController, private navCtrl: NavController) { }
+  constructor(public alerta: AlertController, private navCtrl: NavController,private router: Router,
+    public formBuilder: FormBuilder,
+    private zone: NgZone,
+    private agendaCrudService: AgendaCrudService) {
+      this.agendaForm = this.formBuilder.group({
+        correo: [''],
+        id_medico: [''],
+        fecha_inicio: [''],
+        fecha_termino: [''],
+        id_sucursal: ['']
+      })
+     }
 
   onSubmit() {
 
-    this.navCtrl.navigateForward("horas");
+    if (!this.agendaForm.valid) {
+      return false;
+    } else {
+      this.agendaCrudService.createAgenda(this.agendaForm.value)
+        .subscribe((response) => {
+          this.zone.run(() => {
+            this.agendaForm.reset();
+            this.router.navigate(['/horas']);
+          })
+        });
+    }
+
 
   }
 

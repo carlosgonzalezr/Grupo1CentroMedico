@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-icon class="flecha" name="arrow-back-outline" [routerLink]="['/agendar-hora']"></ion-icon>
+      <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
     <ion-title class="titulo">
       Horas
@@ -17,6 +17,56 @@
 </ion-header>
 
 <ion-app>
+  <ion-menu side="start" menuId="first" contentId="content">
+    <ion-header>
+      <ion-toolbar color="success">
+        <ion-title>Content</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content color="light">
+      <ion-list>
+        <h1 class="ion-text-center">Menú Principal</h1>
+        <!--<ion-icon name="calendar-outline"></ion-icon>-->
+        <ion-item [routerLink]="['/tab']">
+          <ion-label floating>
+            <ion-icon name="home" item-start class="text-primary"></ion-icon>
+            Inicio
+          </ion-label>
+        </ion-item>
+        <ion-item [routerLink]="['/agendar-hora']">
+          <ion-label floating>
+            <ion-icon name="add-circle" item-start class="text-primary"></ion-icon>
+            Agendar Hora
+          </ion-label>
+        </ion-item>
+        <ion-item [routerLink]="['/horas']">
+          <ion-label floating>
+            <ion-icon name="time-sharp" item-start class="text-primary"></ion-icon>
+            Horas
+          </ion-label>
+        </ion-item>
+        <ion-item [routerLink]="['/datos-personales']">
+          <ion-label floating>
+            <ion-icon name="person" item-start class="text-primary"></ion-icon>
+            Datos Personales
+          </ion-label>
+        </ion-item>
+        <ion-item [routerLink]="['/pago']">
+          <ion-label floating>
+            <ion-icon name="card" item-start class="text-primary"></ion-icon>
+            Pago
+          </ion-label>
+        </ion-item >
+        <ion-item (click)="validarSalida()">
+          <ion-label floating>
+            <ion-icon name="exit" item-start class="text-primary"></ion-icon>
+            Salir
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet Id="content"></ion-router-outlet>
 
   <div class="margen">
 
