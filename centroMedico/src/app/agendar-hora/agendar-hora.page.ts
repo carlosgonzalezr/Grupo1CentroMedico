@@ -34,7 +34,7 @@ export class AgendarHoraPage implements OnInit {
      }
 
   onSubmit() {
-
+6
     if (!this.agendaForm.valid) {
       return false;
     } else {
