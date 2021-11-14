@@ -7,15 +7,16 @@
   </ion-card-header>
     
   <ion-card-content>
-    <ion-item >
-      <ion-label position="floating">Email</ion-label>
-      <ion-input [(ngModel)]="email" type="text" required></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label position="floating">Password</ion-label>
-      <ion-input [(ngModel)]="password" type="password" required></ion-input>
-    </ion-item>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">Correo Usuario</ion-label>
+        <ion-input formControlName="correo" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input formControlName="password" type="password" required></ion-input>
+      </ion-item>
+    </form>
   
     <ion-button class="ion-margin-top" type="submit" expand="block" color="primary" (click)="onSubmit()">
       Ingresar

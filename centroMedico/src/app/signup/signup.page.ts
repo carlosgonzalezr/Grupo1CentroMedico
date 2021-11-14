@@ -1,5 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+//import { UserCrudService } from './../services/user-crud.service';
+import { PersonaCrudService } from '../services/persona-crud.service'; 
+import { Component, OnInit, NgZone } from '@angular/core';
 import { NavController, AlertController } from '@ionic/angular';
+import { FormGroup, FormBuilder } from "@angular/forms";
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-signup',
@@ -9,29 +15,57 @@ import { NavController, AlertController } from '@ionic/angular';
 
 export class SignupPage implements OnInit {
 
-  name: string = "";
-  email: string = "";
-  apellido: string = "";
-  password: string = "";
-  confirm_password: string = "";  
+  personaForm: FormGroup;
 
-  constructor(public alerta: AlertController, private navCtrl:NavController) { }
+  constructor(
+    public alerta: AlertController, 
+    private navCtrl: NavController,
+    private personaCrudService: PersonaCrudService, 
+    public formBuilder: FormBuilder, 
+    private zone: NgZone, 
+    private router: Router) {
+    this.personaForm = this.formBuilder.group({
+      correo: [''],
+      rut: [''],
+      nombre: [''],
+      apellido: [''],
+      direccion: [''],
+      comuna: [''],
+      password: [''],
+      repeatPassword: [''],
+      celular: [''],
+      enfermedades: [''],
+      alergias: [''],
+      sexo: [''],
+    })
+  }
 
   ngOnInit() { }
 
   onSubmit() {
-     
-    if(this.name=="" || this.apellido =="" || this.email=="" || this.confirm_password =="" ||
+
+    if (!this.personaForm.valid) {
+      this.validacionFormulario();
+    } else {
+      this.personaCrudService.createPersona(this.personaForm.value)
+        .subscribe((response): void => {
+          this.zone.run(() => {
+            this.personaForm.reset();
+            this.router.navigate(['/login']);
+          })
+        });
+    }
+    /*if(this.name=="" || this.apellido =="" || this.email=="" || this.confirm_password =="" ||
         this.password==""){
-
+  
           this.validacionFormulario();
-
+  
     }
     else{
-
+  
       this.navCtrl.navigateForward("login");
-
-    }
+  
+    }*/
   }
 
   async validacionFormulario() {
@@ -39,7 +73,7 @@ export class SignupPage implements OnInit {
       cssClass: 'my-custom-class',
       header: 'Error',
       //subHeader: 'Subtitle',
-      message: 'Por favor ingresar los campos que faltan.',
+      message: 'Ingrese, correctamente los campos solicitados.',
       buttons: ['OK']
     });
 
