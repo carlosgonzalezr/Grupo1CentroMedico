@@ -37,10 +37,6 @@ const routes: Routes = [
     loadChildren: () => import('./horas/horas.module').then( m => m.HorasPageModule)
   },
   {
-    path: 'datos-personales/:correo',
-    loadChildren: () => import('./datos-personales/datos-personales.module').then( m => m.DatosPersonalesPageModule)
-  },
-  {
     path: 'update-hora/:id',
     loadChildren: () => import('./update-hora/update-hora.module').then( m => m.UpdateHoraPageModule)
   },
@@ -56,7 +52,6 @@ const routes: Routes = [
 ];
 
 
-];
 
 @NgModule({
   imports: [
