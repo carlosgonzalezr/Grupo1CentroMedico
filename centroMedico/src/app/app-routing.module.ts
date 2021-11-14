@@ -37,7 +37,7 @@ const routes: Routes = [
     loadChildren: () => import('./horas/horas.module').then( m => m.HorasPageModule)
   },
   {
-    path: 'datos-personales/:correo',
+    path: 'datos-personales',
     loadChildren: () => import('./datos-personales/datos-personales.module').then( m => m.DatosPersonalesPageModule)
   },
   {
@@ -51,9 +51,6 @@ const routes: Routes = [
     path: 'exito',
     loadChildren: () => import('./exito/exito-routing.module').then( m => m.ExitoPageRoutingModule)
   },
-
-
-];
 
 
 ];
